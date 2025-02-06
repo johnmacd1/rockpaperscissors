@@ -1,6 +1,6 @@
 function getComputerChoice() {
     let computer = Math.random();
-  //  console.log(computer);
+    
     if(computer>0.33 && computer<=0.66){
         return "rock"
     }
@@ -15,19 +15,26 @@ function getComputerChoice() {
 function getUserChoice() {
     let userChoice = prompt("Choose rock, paper or scissors");
     console.log(userChoice);
+    return userChoice;
+  
 }
 
 let humanScore = 0;
 let computerScore= 0;
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice.toLowerCase();
+
+    if(humanChoice === computerChoice) {
+        console.log("draw");
+    }
 }
 
-const humanChoice = getUserChoice();
-const computerChoice = getComputerChoice();
+const humanSelection = getUserChoice();
+const computerSelection = getComputerChoice();
 
 
+console.log(computerSelection);
 
+playRound(humanSelection, computerSelection);
 
-console.log(getComputerChoice());
+//playRound("rock", "rock");
